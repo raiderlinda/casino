@@ -8,7 +8,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`..`,"http://twitch.tv/Death Shop")
+client.user.setGame(`Amrica Shop ,!`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
@@ -17,7 +17,7 @@ client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`**- Hello , ${member} :cocktail: **
 **       - You Are in a Big Community :dove: **
-  **              - Casino ,! :black_heart:**`) 
+  **              ~ Amrica Shop ,! :black_heart:**`) 
 }).catch(console.error)
 })
 
