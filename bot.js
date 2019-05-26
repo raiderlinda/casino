@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "-";
+var prefix = "%";
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : EX Clan`);
@@ -22,7 +22,7 @@ client.on("guildMemberAdd", member => {
 })
 
    client.on('message', message => {
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("%avatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -39,7 +39,7 @@ if(!message.channel.guild) return;
 });
 
 client.on('message', message => {
-var prefix = "-" // البريفكس
+var prefix = "%" // البريفكس
 if(message.content.startsWith(prefix +"server")){ // الامر
   if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.reply(`**هذه الخاصية للادارة فقط** ❎ `)
 if(!message.channel.guild) return message.reply(' ');
@@ -107,7 +107,7 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-   if (message.content === "-id") {
+   if (message.content === "%id") {
    let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setThumbnail(message.author.avatarURL)
@@ -124,7 +124,7 @@ client.on('message', message => {
 
 client.on("message", (message) => {
 
-   if (message.content.startsWith("-new")) {   
+   if (message.content.startsWith("%new")) {   
         const reason = message.content.split(" ").slice(1).join(" ");  
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -155,10 +155,10 @@ client.on("message", (message) => {
     }
  
  
-  if (message.content.startsWith("-close")) {
+  if (message.content.startsWith("%close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`**هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب**||-close||`)
+       message.channel.send(`**هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب**||%close||`)
            .then((m) => {
                message.channel.awaitMessages(response => response.content === '-close', {
                        max: 1,
@@ -196,7 +196,7 @@ client.on('message', message => {
  });
 
 client.on('message', function(message) {
-    if (message.content == "-clear") {
+    if (message.content == "%clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -207,25 +207,8 @@ client.on('message', function(message) {
 
 })
 
-  client.on('message', message => {
-    if (message.content.startsWith("-link")) {
-
-  message.channel.createInvite({
-        thing: true,
-        maxUses: 5,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
-
-message.author.send(`**مدة الرابط يوم :عدد استخدامات الرابط 5**`)
-
-    }
-});
-
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "%";
         if (message.author.id === client.user.id) return;
         if (message.guild) {
        let embed = new Discord.RichEmbed()
@@ -254,13 +237,13 @@ client.on("message", message => {
     });
 
 client.on('message', message => {
-    if (message.content.startsWith("-bot")) {
+    if (message.content.startsWith("%bot")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO  Victoria ,!`` ')
+            .setTitle('``BOR`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -270,26 +253,14 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ - ]` , true)
 			      .addField('``My Language``' , `[ node.js ]` , true)
-			      .setFooter('By | @.Raider 🖤#0582  ')
+			      .setFooter('By | @🔜Mr Dark#7400  ')
     })
 }
 });
 
-   client.on('message', message => {
-     if (message.content === "-support") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/ezRw9Zr**")
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
-
 
 client.on('message', message => {
-	var prefix = "-"
+	var prefix = "%"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -326,7 +297,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	var prefix = "-"
+	var prefix = "%"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -366,7 +337,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-    if (message.content === "-mc") {
+    if (message.content === "%mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -377,7 +348,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ? ")
            });
              }
-if (message.content === "-umc") {
+if (message.content === "%umc") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -395,7 +366,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "-";
+	var prefix = "%";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -453,7 +424,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 });
 
 client.on('message', message =>{
-    if(message.content === '-ping'){
+    if(message.content === '%ping'){
 let start = Date.now(); message.channel.send('pong').then(message => { 
 message.edit(`\`\`\`js
 Time taken: ${Date.now() - start} ms
@@ -463,7 +434,7 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
 });
 
 client.on('message',async message => {
-  if(message.content.startsWith("-setvoice")) {
+  if(message.content.startsWith("%setvoice")) {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
   message.channel.send('✅| **تم عمل الروم بنجاح**');
@@ -480,28 +451,28 @@ client.on('message',async message => {
   }
 });
 
-const developers = ["562313255322779657"]
+const developers = ["569233904389718028"]
 const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'ply')) {
+  if (message.content.startsWith(adminprefix + 'p')) {
     client.user.setGame(argresult);
       message.channel.send(`**Now Playig   ${argresult}**`)
   } else 
      if (message.content === (adminprefix + "leaveserver")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
+  if (message.content.startsWith(adminprefix + 'w')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**Now Watching   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
+  if (message.content.startsWith(adminprefix + 'l')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`**Now Listening   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
+  if (message.content.startsWith(adminprefix + 's')) {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
       message.channel.send(`**Now Streaming   ${argresult}**`)
   }
@@ -528,13 +499,10 @@ client.on('message', message => {
  ==================================================================
 ===================================================================
 ╔[❖════════════❖]╗
-                  Prefix = ' - '
+                  Prefix = ' % '
 ╚[❖════════════❖]╝
 ╔[❖════════════❖]╗
                     اوامر ادارية
-╚[❖════════════❖]╝
-╔[❖════════════❖]╗
-                    مبرمج البوت [  @!~ Raider ,,,#2891  ]
 ╚[❖════════════❖]╝
  ❖-**kick <mention > ➾ **لطرد عضو
  ❖-**ban <mention > ➾**لطرد عضو للابد
@@ -542,18 +510,16 @@ client.on('message', message => {
  ❖-**avatar <mention > ➾ **لمعرفة صورة الخاصة بك
  ❖-**unmute <mention> ➾ **فك الاسكات من العضو
  ❖-**clear  ➾ لتنضيف المحادثة (fixing)**
- ❖-**support  ➾ **لدخول السيرفر الخاص للبوت
  ❖-**mc  ➾ **لقفيل الشات
  ❖-**umc ➾ **لفتح الشات
- ❖-**link ➾ نشاء رابط **
  ❖-**id ➾ لارؤية الملف الشخصي الخاص بك **
  ❖-**ping ➾ لمعرفة سرعة النت الخاص بك **
  ❖-**server ➾ **لامعلومات السيرفر
  ❖-**new ➾ **لانشاء تذكرة
  ❖-**close ➾ **اغلاق التذكرة
  ❖-**setvoice ➾ **لانشاء رووم صوتي
-╔[❖════════════❖]╗
-                    لدخول السيرفر الخاص بلبوت [https://discord.gg/QqPcbER]
+╔[❖════════════❖]╗  
+
 ╚[❖════════════❖]╝
 ==================================================================
 ==================================================================
